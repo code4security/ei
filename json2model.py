@@ -6,9 +6,9 @@ the db is generated according to models.py file.
 
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'ei.settings'
+from mainapp.models import League
 from mainapp.models import Team
 from mainapp.models import Player
-from mainapp.models import League
 import json
 
 

@@ -13,12 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap theme -->
-    <link href="../../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../statics/bootstrap-3.3.4-dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -54,34 +51,23 @@
     <div class="container theme-showcase" role="main">
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <h1>爱电竞 爱dota 选手</h1>
+            <h1>选手</h1>
         </div>
         <table class="table table-striped">
             <!-- <caption>比赛列表</caption> -->
             <thead>
                 <tr>
-                    <th>比赛编号</th>
-                    <th>赛事</th>
-                    <th>对阵</th>
-                    <th>天辉</th>
-                    <th>夜魇</th>
+                    <th>选手id</th>
+                    <th>姓名</th>
                 </tr>
             </thead>
             <tbody>
+                {% for player in player_list %}
                 <tr>
-                    <td>123</td>
-                    <td>TS3</td>
-                    <td>IG-LGD</td>
-                    <td>天辉</td>
-                    <td>夜魇</td>
+                    <td>{{ player.playerid_64 }}</td>
+                    <td>{{ player.player_name }}</td>
                 </tr>
-                <tr>
-                    <td>234</td>
-                    <td>TS3</td>
-                    <td>VG-Secret</td>
-                    <td>天辉</td>
-                    <td>夜魇</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
