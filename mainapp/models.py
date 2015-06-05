@@ -25,18 +25,17 @@ class Player(models.Model):
     """docstring for Player"""
     playerid_32 = models.IntegerField(default=0)
     playerid_64 = models.IntegerField(default=0)
-    Player_name = models.CharField(max_length=50)
+    player_name = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.Player_name
+        return self.player_name
 
 
 class League(models.Model):
 
     """docstring for League"""
-    playerid_32 = models.IntegerField(default=0)
-    playerid_64 = models.IntegerField(default=0)
-    Player_name = models.CharField(max_length=50)
+    leagueid = models.IntegerField(default=0)
+    league_name = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.Player_name
+        return self.league_name

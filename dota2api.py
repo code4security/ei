@@ -1,3 +1,8 @@
+"""
+this module get original informations from api.steampowered.com and store them in json format.
+"""
+
+
 import urllib.request
 import json
 
@@ -43,9 +48,10 @@ class dota2API():
         leaguelist_file = open("leaguelist_original.json", "r")
         leaguelist_str = leaguelist_file.read()
         leaguelist = json.loads(leaguelist_str)
-        leaguelist = leaguelist["result"]["leagues"]
+        leaguepool = leaguelist["result"]["leagues"]
+        leaguepool_str = json.dumps(leaguepool)
         leaguepool_file = open("leaguepool.json", "w")
-        leaguepool_str = leaguepool_file.read()
+        leaguepool_file.write(leaguepool_str)
         leaguepool_file.close()
 
     def convertTeamInfo(self):
@@ -91,7 +97,9 @@ class dota2API():
 
 
 dota2_api = dota2API()
-dota2_api.getTeamInfo()
-dota2_api.convertTeamInfo()
+# dota2_api.getTeamInfo()
+# dota2_api.convertTeamInfo()
+dota2_api.getLeagueList()
+dota2_api.createLeaguePool()
 print("done")
 # input()
